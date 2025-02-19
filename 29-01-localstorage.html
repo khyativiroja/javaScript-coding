@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function setData()
+        {
+            var getvalue = localStorage.setItem('name','khyati');
+            document.getElementById('result').innerText = "user data saved";
+
+        }
+        function getData()
+        {
+            var getvalue = localStorage.getItem('name');
+            document.getElementById('result').innerText = getvalue;
+        }
+        function deleteData()
+        {
+            var getvalue = localStorage.removeItem('name');
+            document.getElementById('result').innerText = "User deleted";
+
+        }
+        function clearData()
+        {
+            localStorage.clear();
+            document.getElementById('result').innerText = "All data deleted";
+
+        }
+    </script>
+    <input type="button" id="setData" onclick="setData()" value="Save Data">
+    <input type="button" id="getData" onclick="getData()" value="Get Data">
+    <input type="button" id="deleteData" onclick="deleteData()" value="Delete Data">
+    <input type="button" id="clearData" onclick="clearData()" value="Clear Data">
+    <p id ="result"></p>
+</body>
+</html>
